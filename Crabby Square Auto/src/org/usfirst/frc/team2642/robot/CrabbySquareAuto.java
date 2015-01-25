@@ -62,29 +62,28 @@ public class CrabbySquareAuto extends IterativeRobot {
     		encoder1.reset();
     	while (-encoder1.getDistance() < 700){
     		myRobot.mecanumDrive_Cartesian(-0.5, 0.0, gyro1.getAngle() * Kp, 0.0);
-
     		}
     		gyro1.reset();
     		encoder1.reset();
     	while(-encoder1.getDistance() < 700){
     		myRobot.mecanumDrive_Cartesian(0.0, 0.5, gyro1.getAngle() * Kp, 0.0);
     		}
-			gyro1.reset();
-			encoder1.reset();
-		while (-encoder1.getDistance() < 700){
+		gyro1.reset();
+		encoder1.reset();
+	while (-encoder1.getDistance() < 700){
     		myRobot.mecanumDrive_Cartesian(0.5, 0.0, gyro1.getAngle() * Kp, 0.0);
-			}
-			gyro1.reset();
-			encoder1.reset();
-			autoLoopCounter = 0;
-		while(autoLoopCounter < 70){
-			myRobot.mecanumDrive_Cartesian(0.0, 0.0, gyro1.getAngle() * Kp, 0.0);
-			autoLoopCounter++;
-			}
-		while(true){
-			myRobot.mecanumDrive_Cartesian(0.0, 0.0, 0.0, 0.0);
-			}
 		}
+		gyro1.reset();
+		encoder1.reset();
+		autoLoopCounter = 0;
+	while(autoLoopCounter < 70){
+		myRobot.mecanumDrive_Cartesian(0.0, 0.0, gyro1.getAngle() * Kp, 0.0);
+		autoLoopCounter++;
+		}
+	while(true){
+		myRobot.mecanumDrive_Cartesian(0.0, 0.0, 0.0, 0.0);
+		}
+	}
     	
     	/**
     	if(autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
